@@ -3,6 +3,7 @@
 Toutes les coordonnées sont en EPSG 3857 Pseudo-Mercator.
 """
 
+from shutil import copy
 from pathlib import Path
 from pandas import Series, DataFrame
 from geopandas import read_file
@@ -37,6 +38,11 @@ pk_c = {
     "G": 3,
     "H": 4,
 }  # pk particuliers pour lignes 983000 et 984000 (Invalides à Austerlitz)
+
+
+def update_index() -> None:
+    # TODO mettre à jour en fonction de la structure sur GitHub Pages
+    copy(Carte_Lignes.save_path / f"{Carte_Lignes.titre_ref}.html", Path(__file__).parent / "index.html")
 
 
 def pk_dec(pk: Series) -> Series:
