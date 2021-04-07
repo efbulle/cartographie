@@ -93,6 +93,7 @@ class Fond_de_carte:
             text=self.text_aide,
             style={"overflow-y": "scroll", "height": "200px"},
         )
+        self.texte_questions = Div(text="""<a href="https://github.com/efbulle/cartographie">Code source</a>""")
 
     def cstr_layout(self) -> Box:
         return self.p
@@ -299,6 +300,7 @@ class Carte_tronçons(Fond_de_carte):
                 self.première_ligne,
                 self.titre_tron_div,
                 self.table_tron,
+                self.texte_questions,
                 self.aide,
             ),
         )
