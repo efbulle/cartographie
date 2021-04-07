@@ -3,4 +3,3 @@ __pycache__
 *.ipynb
 temp_*
 .ipynb_checkpoints
-notebooks
