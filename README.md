@@ -2,6 +2,12 @@
 
 `cartographie` rassemble des cartes dynamiques créées à partir des données de l'infrastructure ferroviaire tirées de [l'open data SNCF](https://data.sncf.com/). Le code Python (3.9) s'appuie principalement sur les bibliothèques [bokeh](https://docs.bokeh.org/) et [geopandas](https://geopandas.org/).
 
+## Démo
+
+[cartographie](https://efbulle.github.io/cartographie/)
+
+Merci à GitHub Pages !
+
 ## Captures d'écran
 
 ![capture](démo.gif)
