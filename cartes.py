@@ -61,6 +61,7 @@ class Fond_de_carte:
 
     titre_ref = "Carte"
     save_path = Path(__file__).parent / "résultats"
+    url = ""
 
     def __init__(self, titre: str = None, tile: bool = True, fig_height: int = 760) -> None:
         self.titre = titre if titre is not None else self.titre_ref
@@ -93,7 +94,9 @@ class Fond_de_carte:
             text=self.text_aide,
             style={"overflow-y": "scroll", "height": "200px"},
         )
-        self.texte_questions = Div(text="""<a href="https://github.com/efbulle/cartographie">Code source</a>""")
+        self.texte_questions = Div(
+            text=f"""<a href="https://github.com/efbulle/cartographie">Code source sur GitHub</a> et données <a href="{self.url}">open data SNCF</a>"""
+        )
 
     def cstr_layout(self) -> Box:
         return self.p
@@ -307,12 +310,9 @@ class Carte_tronçons(Fond_de_carte):
 
 
 class Carte_Lignes(Carte_tronçons):
-    """Carte des lignes avec régime d'exploitation.
+    """Carte des lignes avec régime d'exploitation."""
 
-    Données issues de
-    https://data.sncf.com/explore/dataset/regime-dexploitation-des-lignes/information/
-    """
-
+    url = "https://data.sncf.com/explore/dataset/regime-dexploitation-des-lignes/information/"
     titre_ref = "Carte des lignes"
     c1, c2, c3, *_ = brewer["Purples"][8]
     groupes = [
