@@ -16,6 +16,5 @@ Merci à GitHub Pages !
 
 Le fichier `cartes.py` contient les classes utiles et le répertoire [notebooks](notebooks) illustre un exemple d'utilisation, d'autres suivent...
 
-
-
-
+## Contact
+[LinkedIn](https://www.linkedin.com/in/emmanuel-favre-bulle)
