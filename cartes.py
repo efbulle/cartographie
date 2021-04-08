@@ -92,17 +92,19 @@ class Fond_de_carte:
         pass
 
     @property
-    def text_aide(self) -> str:
+    def texte_aide(self) -> str:
         return "<b>Mode d'emploi</b>"
+
+    @property
+    def texte_questions(self) -> str:
+        return f"""<a href="https://github.com/efbulle/cartographie">Code source sur GitHub</a> et données <a href="{self.url}">open data SNCF</a>"""
 
     def init_layout(self) -> None:
         self.aide = Div(
-            text=self.text_aide,
+            text=self.texte_aide,
             style={"overflow-y": "scroll", "height": "200px"},
         )
-        self.texte_questions = Div(
-            text=f"""<a href="https://github.com/efbulle/cartographie">Code source sur GitHub</a> et données <a href="{self.url}">open data SNCF</a>"""
-        )
+        self.questions = Div(text=self.texte_questions)
 
     def cstr_layout(self) -> Box:
         return self.p
@@ -168,7 +170,7 @@ class Carte_tronçons(Fond_de_carte):
         return [(c, f"@{c}") for c in self.cols]
 
     @property
-    def text_aide(self) -> str:
+    def texte_aide(self) -> str:
         return """<b>Mode d'emploi</b>
         <p>La sélection d'une ou plusieurs lignes est possible directement sur la carte (shift + clic) ou dans la table (shift/ctrl + clic).</p>
         <p>On peut aussi sélectionner une ligne en indiquant son numéro de ligne et de rang dans l'entrée texte située en haut à droite. 
@@ -309,7 +311,7 @@ class Carte_tronçons(Fond_de_carte):
                 self.première_ligne,
                 self.titre_tron_div,
                 self.table_tron,
-                self.texte_questions,
+                self.questions,
                 self.aide,
             ),
         )
