@@ -321,7 +321,7 @@ class Carte_Lignes(Carte_tronçons):
     """Carte des lignes avec régime d'exploitation."""
 
     url = "https://data.sncf.com/explore/dataset/regime-dexploitation-des-lignes/information/"
-    titre_ref = "Carte des lignes"
+    titre_ref = "Lignes du Réseau Ferré National par régime d’exploitation"
     c1, c2, c3, *_ = brewer["Purples"][8]
     groupes = [
         ("Voie double ou banalisée", ["Double voie", "Voie banalisée"], c1, 2),

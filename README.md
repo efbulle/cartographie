@@ -4,7 +4,7 @@
 
 ## Démo
 
-[cartographie](https://efbulle.github.io/cartographie/)
+[Liste des lignes du Réseau Ferré National par régime d’exploitation](https://efbulle.github.io/cartographie/), issue de [l'open data SNCF](https://data.sncf.com/explore/dataset/regime-dexploitation-des-lignes/information/), sous licence ODbL.
 
 Merci à GitHub Pages !
 
