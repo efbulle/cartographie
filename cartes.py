@@ -3,7 +3,6 @@
 Toutes les coordonnées sont en EPSG 3857 Pseudo-Mercator.
 """
 
-from shutil import copy
 from pathlib import Path
 from pandas import Series, DataFrame
 from geopandas import read_file
@@ -40,11 +39,6 @@ pk_c = {
 }  # pk particuliers pour lignes 983000 et 984000 (Invalides à Austerlitz)
 
 
-def update_index() -> None:
-    # TODO mettre à jour en fonction de la structure sur GitHub Pages
-    copy(Carte_Lignes.save_path / f"{Carte_Lignes.titre_ref}.html", Path(__file__).parent / "index.html")
-
-
 def pk_dec(pk: Series) -> Series:
     """Renvoie une série de pk entiers à partir des pk littéraux."""
     dec = pk.str.extract(regex_pk_dec).astype({"add2": float})
@@ -66,7 +60,7 @@ class Fond_de_carte:
     """
 
     titre_ref = "Carte"
-    save_path = Path(__file__).parent / "résultats"
+    save_path = Path(__file__).parent / "index.html"
     url = ""
 
     def __init__(self, titre: str = None, tile: bool = True, fig_height: int = 760) -> None:
@@ -114,7 +108,7 @@ class Fond_de_carte:
         layout = self.cstr_layout()
         io.show(layout)
         if save:
-            io.save(layout, self.save_path / f"{self.titre}.html", resources=CDN, title=self.titre)
+            io.save(layout, self.save_path, resources=CDN, title=self.titre)
 
 
 class Carte_tronçons(Fond_de_carte):
