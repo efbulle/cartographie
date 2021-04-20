@@ -14,7 +14,7 @@ Merci à GitHub Pages !
 
 ## Utilisation et exemples
 
-Le fichier `cartes.py` contient les classes utiles et le répertoire [notebooks](notebooks) illustre un exemple d'utilisation, d'autres suivent...
+Le fichier `cartes.py` contient les classes utiles et le fichier [génère_html.py](génère_html.py) illustre un exemple d'utilisation.
 
 ## Contact
 [LinkedIn](https://www.linkedin.com/in/emmanuel-favre-bulle)
